@@ -1,0 +1,507 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: 'Barlow Semi Condensed', sans-serif;
+}
+
+.container {
+  padding: 30px;
+  width: 100%;
+  height: 100vh;
+  background: -webkit-gradient(linear, left top, left bottom, from(#1f3756), to(#141539));
+  background: linear-gradient(to bottom, #1f3756, #141539);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: -2;
+}
+
+.container .rules-container {
+  display: none;
+}
+
+.container .rules-container .rules {
+  position: absolute;
+  z-index: 20;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  display: -ms-grid;
+  display: grid;
+  background-color: white;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  place-items: center;
+}
+
+.container .rules-container .rules .rules-header {
+  font-size: 40px;
+  font-weight: 700;
+}
+
+.container .rules-container .rules .close-btn {
+  cursor: pointer;
+}
+
+.container .rules-container .overlay {
+  display: none;
+}
+
+.container .header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  border: 3px solid #606e85;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 10px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 5px;
+}
+
+.container .header .title {
+  line-height: 18px;
+  padding-left: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  color: white;
+  text-transform: uppercase;
+  font-size: 20px;
+}
+
+.container .header .score-container {
+  padding: 5px 25px;
+  height: 100%;
+  background-color: white;
+  color: #3b4363;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-weight: 600;
+  font-size: 13px;
+  border-radius: 5px;
+}
+
+.container .header .score-container .score {
+  font-size: 3em;
+  font-weight: 700;
+}
+
+.container .content .first-state {
+  width: 500px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 100px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.container .content .first-state .tringle {
+  position: absolute;
+  z-index: 1;
+  top: 20%;
+}
+
+.container .content .first-state .options {
+  cursor: pointer;
+  z-index: 2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 150px;
+  height: 150px;
+  background-color: white;
+  border-radius: 100px;
+}
+
+.container .content .first-state .options img {
+  width: 70px;
+}
+
+.container .content.you-win .your-choice .image {
+  -webkit-animation: box-shadow-1 200ms 0ms forwards, box-shadow-2 200ms 500ms forwards, box-shadow-3 200ms 1000ms forwards;
+          animation: box-shadow-1 200ms 0ms forwards, box-shadow-2 200ms 500ms forwards, box-shadow-3 200ms 1000ms forwards;
+}
+
+.container .content.you-lose .computer-choice .image {
+  -webkit-animation: box-shadow-1 200ms 0ms forwards, box-shadow-2 200ms 500ms forwards, box-shadow-3 200ms 1000ms forwards;
+          animation: box-shadow-1 200ms 0ms forwards, box-shadow-2 200ms 500ms forwards, box-shadow-3 200ms 1000ms forwards;
+}
+
+.container .content .win-lose-state {
+  display: none;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas: 'your-choice computer-choice' 'message message';
+  gap: 50px;
+}
+
+.container .content .win-lose-state .your-choice {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 30px;
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: your-choice;
+}
+
+.container .content .win-lose-state .your-choice .image {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 150px;
+  height: 150px;
+  background-color: white;
+  border-radius: 100px;
+}
+
+.container .content .win-lose-state .your-choice .image img {
+  width: 70px;
+}
+
+.container .content .win-lose-state .your-choice span {
+  font-size: 20px;
+  color: white;
+}
+
+.container .content .win-lose-state .computer-choice {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 30px;
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: computer-choice;
+}
+
+.container .content .win-lose-state .computer-choice .image {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 150px;
+  height: 150px;
+  background-color: white;
+  border-radius: 100px;
+}
+
+.container .content .win-lose-state .computer-choice .image img {
+  width: 70px;
+}
+
+.container .content .win-lose-state .computer-choice span {
+  font-size: 20px;
+  color: white;
+}
+
+.container .content .win-lose-state .message-container {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 20px;
+  text-transform: uppercase;
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: message;
+}
+
+.container .content .win-lose-state .message-container .message {
+  font-size: 50px;
+  color: white;
+}
+
+.container .content .win-lose-state .message-container .play-again {
+  cursor: pointer;
+  padding: 20px 60px;
+  background-color: white;
+  color: #3b4363;
+  border-radius: 10px;
+}
+
+.container .rules-btn-container {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: white;
+  text-transform: uppercase;
+}
+
+.container .rules-btn-container .rules-btn {
+  cursor: pointer;
+  padding: 10px 50px;
+  border-radius: 10px;
+  border: 1px solid white;
+}
+
+.paper {
+  border: 10px solid #4865f4;
+}
+
+.scissors {
+  border: 10px solid #ec9e0e;
+}
+
+.rock {
+  border: 10px solid #dc2e4e;
+}
+
+@-webkit-keyframes box-shadow-1 {
+  0% {
+    -webkit-box-shadow: 0 0 0 0 #606e85;
+            box-shadow: 0 0 0 0 #606e85;
+  }
+  100% {
+    -webkit-box-shadow: 0 0 0 20px #606e85;
+            box-shadow: 0 0 0 20px #606e85;
+  }
+}
+
+@keyframes box-shadow-1 {
+  0% {
+    -webkit-box-shadow: 0 0 0 0 #606e85;
+            box-shadow: 0 0 0 0 #606e85;
+  }
+  100% {
+    -webkit-box-shadow: 0 0 0 20px #606e85;
+            box-shadow: 0 0 0 20px #606e85;
+  }
+}
+
+@-webkit-keyframes box-shadow-2 {
+  0% {
+    -webkit-box-shadow: 0 0 0 20px #606e85;
+            box-shadow: 0 0 0 20px #606e85;
+  }
+  100% {
+    -webkit-box-shadow: 0 0 0 20px #606e85, 0 0 0 50px rgba(96, 110, 133, 0.3);
+            box-shadow: 0 0 0 20px #606e85, 0 0 0 50px rgba(96, 110, 133, 0.3);
+  }
+}
+
+@keyframes box-shadow-2 {
+  0% {
+    -webkit-box-shadow: 0 0 0 20px #606e85;
+            box-shadow: 0 0 0 20px #606e85;
+  }
+  100% {
+    -webkit-box-shadow: 0 0 0 20px #606e85, 0 0 0 50px rgba(96, 110, 133, 0.3);
+            box-shadow: 0 0 0 20px #606e85, 0 0 0 50px rgba(96, 110, 133, 0.3);
+  }
+}
+
+@-webkit-keyframes box-shadow-3 {
+  0% {
+    -webkit-box-shadow: 0 0 0 20px #606e85, 0 0 0 50px rgba(96, 110, 133, 0.3);
+            box-shadow: 0 0 0 20px #606e85, 0 0 0 50px rgba(96, 110, 133, 0.3);
+  }
+  100% {
+    -webkit-box-shadow: 0 0 0 20px #606e85, 0 0 0 50px rgba(96, 110, 133, 0.3), 0 0 0 80px rgba(96, 110, 133, 0.091);
+            box-shadow: 0 0 0 20px #606e85, 0 0 0 50px rgba(96, 110, 133, 0.3), 0 0 0 80px rgba(96, 110, 133, 0.091);
+  }
+}
+
+@keyframes box-shadow-3 {
+  0% {
+    -webkit-box-shadow: 0 0 0 20px #606e85, 0 0 0 50px rgba(96, 110, 133, 0.3);
+            box-shadow: 0 0 0 20px #606e85, 0 0 0 50px rgba(96, 110, 133, 0.3);
+  }
+  100% {
+    -webkit-box-shadow: 0 0 0 20px #606e85, 0 0 0 50px rgba(96, 110, 133, 0.3), 0 0 0 80px rgba(96, 110, 133, 0.091);
+            box-shadow: 0 0 0 20px #606e85, 0 0 0 50px rgba(96, 110, 133, 0.3), 0 0 0 80px rgba(96, 110, 133, 0.091);
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .container {
+    width: 100%;
+    height: 100vh;
+  }
+  .container .rules-container {
+    background-color: blue;
+  }
+  .container .rules-container .rules {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    -ms-grid-rows: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: 'header close' 'image image';
+    border-radius: 10px;
+    width: 500px;
+    height: 500px;
+    z-index: 5;
+    gap: 50px;
+    top: 50%;
+    left: 50%;
+    padding-bottom: 50px;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    place-items: center;
+  }
+  .container .rules-container .rules .rules-header {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: header;
+  }
+  .container .rules-container .rules .rules-image {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-area: image;
+  }
+  .container .rules-container .rules .close-btn {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+    grid-area: close;
+  }
+  .container .rules-container .overlay {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.431);
+  }
+  .container .header {
+    width: 50%;
+  }
+  .container .content .first-state {
+    width: 500px;
+  }
+  .container .content .win-lose-state {
+    display: none;
+    -ms-grid-rows: 1fr;
+        grid-template-rows: 1fr;
+    -ms-grid-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas: 'your-choice message computer-choice';
+  }
+  .container .content .win-lose-state .your-choice {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: your-choice;
+  }
+  .container .content .win-lose-state .message-container {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+    grid-area: message;
+  }
+  .container .content .win-lose-state .computer-choice {
+    -ms-grid-row: 1;
+    -ms-grid-column: 3;
+    grid-area: computer-choice;
+  }
+  .container .rules-btn-container {
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  margin-top: -20px;
+  color: white;
+}
+
+.attribution a {
+  color: #3e52a3;
+}
+/*# sourceMappingURL=style.css.map */

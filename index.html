@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <title>Frontend Mentor | Rock, Paper, Scissors</title>
+</head>
+<body>
+
+  <div class="container">
+    <div class="header">
+      <div class="title">
+        <span>rock</span>
+        <span>paper</span>
+        <span>scissors</span>
+      </div>
+      <div class="score-container">
+        score
+        <span class="score">0</span>
+      </div>
+    </div>
+    <div class="content">
+      <div class="win-lose-state">
+         <div class="your-choice">
+            <div class="image paper">
+              <img src="./images/icon-paper.svg" alt="paper">
+            </div>
+            <span>you pick</span>
+          </div>
+          <div class="computer-choice">
+            <div class="image scissors">
+              <img src="./images/icon-scissors.svg" alt="scissors">
+            </div>
+            <span>the house picked</span>
+          </div>
+        <div class="message-container">
+          <div class="message">you lose</div>
+          <div class="play-again">play again</div>
+        </div>
+      </div>
+      <div class="first-state">
+        <div class="options paper" data-option="paper">
+          <img src="./images/icon-paper.svg" alt="paper icon">
+        </div>
+        <div class="options scissors" data-option="scissors">
+          <img src="./images/icon-scissors.svg" alt="scissors icon">
+        </div>
+        <div class="options rock" data-option="rock">
+          <img src="./images/icon-rock.svg" alt="rock icon">
+        </div>
+        <div class="tringle">
+          <img src="./images/bg-triangle.svg" alt="tringle">
+        </div>
+      </div>
+    </div>
+    <div class="rules-btn-container">
+      <div class="rules-btn">Rules</div>
+    </div>
+
+    <div class="rules-container">
+      <div class="overlay"></div>
+      <div class="rules">
+        <div class="rules-header">RULES</div>
+        <div class="rules-image">
+          <img src="./images/image-rules.svg" alt="rules image">
+        </div>
+        <div class="close-btn">
+          <img src="./images/icon-close.svg" alt="">
+        </div>
+      </div>
+    </div>
+    
+  </div>
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="https://github.com/Ali-Akbar-Qasimi" target="_blank">Ali Akbar Qasimi</a>.
+  </div>
+
+  <script src="./scripts.js"></script>
+</body>
+</html>
